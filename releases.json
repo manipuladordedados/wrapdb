@@ -467,6 +467,7 @@
       "cpp-httplib"
     ],
     "versions": [
+      "0.18.7-1",
       "0.18.6-1",
       "0.18.5-1",
       "0.18.3-1",
@@ -1537,6 +1538,17 @@
       "1.9.5-2",
       "1.9.5-1",
       "1.8.4-1"
+    ]
+  },
+  "kafel": {
+    "dependency_names": [
+      "kafel"
+    ],
+    "program_names": [
+      "dump_policy_bpf"
+    ],
+    "versions": [
+      "2023.10.04-1"
     ]
   },
   "kraken-engine": {
