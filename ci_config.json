@@ -45,11 +45,13 @@
   "cairo": {
     "_comment": [
       "- Force-enable fontconfig to avoid https://gitlab.freedesktop.org/cairo/cairo/-/issues/862",
+      "- Prevent libxml2 from requiring Python",
       "- Don't fail on proxy-libintl Meson warning - https://github.com/frida/proxy-libintl/pull/6",
       "- Some tests fails and they are still run despite -Dtests=disabled"
     ],
     "build_options": [
-      "cairo:fontconfig=enabled"
+      "cairo:fontconfig=enabled",
+      "libxml2:python=false"
     ],
     "fatal_warnings": false,
     "skip_tests": true
@@ -474,6 +476,10 @@
       "libudev-dev",
       "libxrandr-dev"
     ]
+  },
+  "lcms2": {
+    "_comment": "https://github.com/mm2/Little-CMS/pull/473",
+    "fatal_warnings": false
   },
   "leptonica": {
     "debian_packages": [
@@ -979,6 +985,11 @@
       "windows": false
     }
   },
+  "pcre2": {
+    "msys_packages": [
+      "diffutils"
+    ]
+  },
   "pegtl": {
     "build_options": [
       "pegtl:tests=enabled",
@@ -1071,6 +1082,12 @@
     ],
     "debian_packages": [
       "qtbase5-dev"
+    ]
+  },
+  "quickjs": {
+    "build_options": [
+      "quickjs-ng:tests=enabled",
+      "quickjs-ng:examples=enabled"
     ]
   },
   "rdkafka": {
@@ -1235,6 +1252,13 @@
     "build_options": [
       "zycore:examples=enabled",
       "zycore:tests=enabled"
+    ]
+  },
+  "zydis": {
+    "build_options": [
+      "zydis:examples=enabled",
+      "zydis:tests=enabled",
+      "zydis:tools=enabled"
     ]
   }
 }
